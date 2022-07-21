@@ -2,6 +2,7 @@ package com.github.fenixsoft.bookstore.account;
 
 import com.github.fenixsoft.bookstore.domain.account.Account;
 import com.github.fenixsoft.bookstore.resource.JAXRSResourceBase;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import javax.ws.rs.core.Response;
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author icyfenix@gmail.com
  * @date 2020/4/6 18:52
  **/
+@Disabled
 class AccountResourceTest extends JAXRSResourceBase {
 
     @Test

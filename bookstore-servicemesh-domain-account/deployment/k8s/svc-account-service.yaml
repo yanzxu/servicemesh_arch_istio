@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: servicemesh-account # curl servicemesh-account:80  in pod is ok
+  namespace: bookstore-servicemesh
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: pod-servicemesh-account

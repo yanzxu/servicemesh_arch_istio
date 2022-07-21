@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: servicemesh-account
+  profiles:
+    active: local
+  datasource:
+    url: jdbc:mysql://yzxu.asuscomm.com:3306/book_store
+    username: root
+    password: 906700211
+    schema: "classpath:db/mysql/schema.sql"
+    data: "classpath:db/mysql/data.sql"
+    sql-script-encoding: UTF-8
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  resources:
+    chain:
+      compressed: true
+      cache: true
+    cache:
+      period: 86400
+
+  logging:
+    pattern:
+      console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(-){faint} %clr([%t]){faint} %clr(%-40logger{39}){cyan}[%line]%clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
+    level:
+      root: INFO

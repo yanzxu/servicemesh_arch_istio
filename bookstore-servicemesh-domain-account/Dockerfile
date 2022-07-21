@@ -5,10 +5,10 @@ MAINTAINER icyfenix
 ENV SPRING_OUTPUT_ANSI_ENABLED=ALWAYS \
     JAVA_OPTS="" \
     PORT=80 \
-    PROFILES="default"
+    PROFILES="dev"
 
 ADD /target/*.jar /bookstore-account.jar
 
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /bookstore-account.jar --spring.config.location=/config/application.yaml --spring.profiles.active=$PROFILES"]
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /bookstore-account.jar --spring.profiles.active=$PROFILES"]
 
 EXPOSE $PORT

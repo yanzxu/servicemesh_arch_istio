@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-servicemesh-account
+  namespace: bookstore-servicemesh
+  labels:
+    app: deployment-servicemesh-account
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pod-servicemesh-account
+  template:
+    metadata:
+      labels:
+        app: pod-servicemesh-account
+    spec:
+      containers:
+        - image: yanzxu/servicemesh-account:{IMAGE_TAG}
+          name: servicemesh-account
+          ports:
+            - containerPort: 80 # curl pod-ip:80/users
+              protocol: TCP
+      serviceAccountName: book-admin
