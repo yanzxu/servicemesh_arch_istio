@@ -68,7 +68,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-                dir('user-service/deployment/k8s') {
+                dir('bookstore-servicemesh-domain-account/deployment/k8s') {
                     echo '********* deploy start ********'
                     sh './update-deploy-image.sh $IMAGE_TAG'
                     echo '********* deploy end ********'

@@ -22,7 +22,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
-@EnableCaching
+//@EnableCaching
 @SpringBootApplication(scanBasePackages = {"com.github.fenixsoft.bookstore"})
 public class AccountApplication {
     public static void main(String[] args) {
